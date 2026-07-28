@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Submit your property to 4Ways Property Group for review.">
+  <meta name="theme-color" content="#080b0e">
+  <title>Sell Your Property | 4Ways</title>
+  <link rel="icon" href="4ways-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="4Ways home">
+    <img src="4ways-logo.png" alt="4Ways logo">
+    <span><strong>4WAYS</strong><small>PROPERTY GROUP</small></span>
+  </a>
+  <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+  <nav id="main-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+<a href="property.html">Property Group</a>
+<a href="projects.html">Projects</a>
+<a href="auto.html">4Ways Auto</a>
+<a class="active" href="sell.html">Sell Your Property</a>
+  </nav>
+</header>
+<main><section class="page-hero"><p class="eyebrow">SELL YOUR PROPERTY</p><h1>A simple, private property inquiry.</h1><p>Tell us what you know about the property. Submitting information does not obligate you to sell.</p></section><section id="sell" class="seller-section">
+      <div class="seller-intro">
+        <p class="eyebrow">SELL YOUR PROPERTY</p>
+        <h2>Tell us about your property.</h2>
+        <p>We consider single-family homes, duplexes, multifamily properties, vacant properties, inherited homes, and buildings that need repairs or repositioning.</p>
+
+        <div class="benefit-list">
+          <div><strong>As-is consideration</strong><span>No promise to make repairs or clean before contacting us.</span></div>
+          <div><strong>Flexible timing</strong><span>Discuss a closing timeline that fits your situation.</span></div>
+          <div><strong>No obligation</strong><span>Submitting information does not require you to sell.</span></div>
+          <div><strong>Local conversation</strong><span>Work directly with a Central Indiana family-owned company.</span></div>
+        </div>
+      </div>
+
+      <form id="property-form" class="lead-form">
+        <div class="form-title">
+          <span>PROPERTY INQUIRY</span>
+          <h3>Request a property review</h3>
+          <p>Complete what you know. Required fields are marked with an asterisk.</p>
+        </div>
+
+        <label>Property address *
+          <input name="address" type="text" required placeholder="Street, city, state, ZIP">
+        </label>
+
+        <div class="field-grid">
+          <label>Property type
+            <select name="propertyType">
+              <option value="">Select</option>
+              <option>Single-family home</option>
+              <option>Duplex</option>
+              <option>Multifamily property</option>
+              <option>Apartment building</option>
+              <option>Mixed-use building</option>
+              <option>Vacant land</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>Condition
+            <select name="condition">
+              <option value="">Select</option>
+              <option>Move-in ready</option>
+              <option>Needs light updates</option>
+              <option>Needs significant repairs</option>
+              <option>Vacant or distressed</option>
+              <option>Unsure</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="field-grid">
+          <label>Desired timeline
+            <select name="timeline">
+              <option value="">Select</option>
+              <option>As soon as possible</option>
+              <option>Within 30 days</option>
+              <option>Within 60–90 days</option>
+              <option>Flexible</option>
+              <option>Just exploring</option>
+            </select>
+          </label>
+          <label>Asking price
+            <input name="askingPrice" type="text" inputmode="decimal" placeholder="$">
+          </label>
+        </div>
+
+        <label>Property details
+          <textarea name="details" rows="4" placeholder="Repairs, occupancy, loan balance, reason for selling, or other helpful information"></textarea>
+        </label>
+
+        <div class="field-grid">
+          <label>Your name *
+            <input name="name" type="text" required>
+          </label>
+          <label>Phone number *
+            <input name="phone" type="tel" required>
+          </label>
+        </div>
+
+        <label>Email address *
+          <input name="email" type="email" required>
+        </label>
+
+        <label class="consent">
+          <input type="checkbox" required>
+          <span>I agree that 4Ways Property Group may contact me about this property inquiry.</span>
+        </label>
+
+        <button class="button primary full" type="submit">Send Property Details</button>
+        <p id="form-status" class="form-status" role="status"></p>
+        <small class="form-note">Submitting this form does not guarantee an offer. Any offer is subject to property, value, title, and condition review.</small>
+      </form>
+    </section></main>
+<footer>
+  <div class="footer-brand">
+    <img src="4ways-logo.png" alt="4Ways logo">
+    <div><strong>4WAYS PROPERTY GROUP, LLC</strong><span>Building Legacy. Creating Value.</span></div>
+  </div>
+  <div class="footer-links">
+    <a href="property.html">Property Group</a>
+    <a href="projects.html">Projects</a>
+    <a href="auto.html">4Ways Auto</a>
+    <a href="sell.html">Sell Your Property</a>
+  </div>
+  <p>© <span id="year"></span> 4Ways Property Group, LLC.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
