@@ -13,8 +13,7 @@ nav?.querySelectorAll('a').forEach(link => {
   });
 });
 
-const year = document.querySelector('#year');
-if (year) year.textContent = new Date().getFullYear();
+document.querySelector('#year').textContent = new Date().getFullYear();
 
 const form = document.querySelector('#property-form');
 const status = document.querySelector('#form-status');
