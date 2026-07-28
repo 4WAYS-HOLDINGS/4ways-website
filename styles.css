@@ -266,3 +266,56 @@ nav a.active{color:var(--teal)}
 .layer-card p{color:var(--muted);max-width:520px}
 .layer-card strong{margin-top:auto;color:var(--teal);font-size:.82rem}
 @media(max-width:700px){.layer-grid{grid-template-columns:1fr}.page-hero{padding-top:105px}}
+
+
+/* Version 9: image-only landing page */
+.landing-main{
+  min-height:calc(100vh - 76px);
+  background:#050709;
+}
+.landing-only{
+  position:relative;
+  width:100%;
+  min-height:calc(100vh - 76px);
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.landing-only>img{
+  width:100%;
+  height:calc(100vh - 76px);
+  min-height:620px;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+.landing-buttons{
+  position:absolute;
+  left:50%;
+  bottom:52px;
+  transform:translateX(-50%);
+  display:flex;
+  gap:18px;
+  z-index:3;
+}
+.landing-buttons .button{
+  min-width:240px;
+  min-height:58px;
+  box-shadow:0 14px 34px rgba(0,0,0,.42);
+}
+@media(max-width:900px){
+  .landing-only>img{
+    object-position:center top;
+    min-height:680px;
+  }
+  .landing-buttons{
+    bottom:30px;
+    width:calc(100% - 36px);
+    flex-direction:column;
+  }
+  .landing-buttons .button{
+    width:100%;
+    min-width:0;
+  }
+}
