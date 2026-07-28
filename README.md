@@ -1,21 +1,23 @@
-# 4Ways Website
+# 4Ways Website Version 2
 
-A free static website for:
-- 4Ways Property Group, LLC
-- 4Ways Auto, LLC
+This version adds:
+- A simpler navigation
+- A primary off-market seller lead section
+- A property inquiry form
+- A clear four-step process
+- Separate Property Group and Auto sections
+- Mobile-friendly layout
 
-## Publish with GitHub Pages
-1. Create a new public GitHub repository named `4ways-website`.
-2. Upload `index.html`, `styles.css`, and `script.js`.
-3. Open Settings → Pages.
-4. Under Build and deployment, select “Deploy from a branch.”
-5. Select the `main` branch and `/root`, then Save.
+## Upload to GitHub
+Replace the existing files in the repository with:
+- index.html
+- styles.css
+- script.js
 
-## Customize
-Open `index.html` and replace:
-- Email address
-- Business descriptions
-- Contact details
-- Project photos and links
+GitHub Pages will automatically republish the updated website.
 
-The sample photos are loaded from Unsplash. Replace them with your own property and vehicle photos before the final launch.
+## Lead form
+The current form opens the visitor's email application with all property details pre-filled and sends to:
+jwinbush@4wayspropertygroup.com
+
+For form submissions that work without opening email, connect a free Formspree endpoint later.
