@@ -1,45 +1,76 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+const menuButton = document.querySelector('.menu-button');
+const nav = document.querySelector('#main-nav');
 
-const menuButton = document.querySelector('.menu-toggle');
-const nav = document.querySelector('nav');
-
-menuButton.addEventListener('click', () => {
+menuButton?.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+  menuButton.setAttribute('aria-expanded', String(open));
 });
 
-nav.querySelectorAll('a').forEach(link => {
+nav?.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('open');
-    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton?.setAttribute('aria-expanded', 'false');
   });
 });
 
-const form = document.getElementById('property-form');
-const status = document.getElementById('form-status');
+document.querySelector('#year').textContent = new Date().getFullYear();
 
-form.addEventListener('submit', event => {
+const form = document.querySelector('#property-form');
+const status = document.querySelector('#form-status');
+
+form?.addEventListener('submit', (event) => {
   event.preventDefault();
 
+  if (!form.reportValidity()) return;
+
   const data = new FormData(form);
-  const subject = encodeURIComponent('Off-Market Property Lead: ' + (data.get('address') || 'New Inquiry'));
-  const body = encodeURIComponent(
-`New off-market property inquiry
+  const subject = `New 4Ways Property Inquiry: ${data.get('address')}`;
+  const body = [
+    'NEW PROPERTY INQUIRY',
+    '',
+    `Property address: ${data.get('address') || ''}`,
+    `Property type: ${data.get('propertyType') || ''}`,
+    `Condition: ${data.get('condition') || ''}`,
+    `Desired timeline: ${data.get('timeline') || ''}`,
+    `Asking price: ${data.get('askingPrice') || ''}`,
+    '',
+    `Property details: ${data.get('details') || ''}`,
+    '',
+    `Seller name: ${data.get('name') || ''}`,
+    `Phone: ${data.get('phone') || ''}`,
+    `Email: ${data.get('email') || ''}`
+  ].join('\n');
 
-Property address: ${data.get('address') || ''}
-Property type: ${data.get('propertyType') || ''}
-Condition: ${data.get('condition') || ''}
-Desired timeline: ${data.get('timeline') || ''}
-Asking price: ${data.get('askingPrice') || ''}
+  status.textContent = 'Opening your email application with the property details prepared.';
+  window.location.href =
+    `mailto:jwinbush@4wayspropertygroup.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
 
-Property details:
-${data.get('details') || ''}
 
-Seller name: ${data.get('name') || ''}
-Phone: ${data.get('phone') || ''}
-Email: ${data.get('email') || ''}`
-  );
+// Add each live Turo listing URL below.
+const TURO_LISTINGS = { sonata: "" };
 
-  status.textContent = 'Opening your email app with the property details...';
-  window.location.href = `mailto:jwinbush@4wayspropertygroup.com?subject=${subject}&body=${body}`;
+document.querySelectorAll('[data-turo-link]').forEach(link => {
+  const url = TURO_LISTINGS[link.dataset.turoLink];
+  if (url) { link.href = url; link.target = "_blank"; link.rel = "noopener"; }
+  else { link.addEventListener('click', event => { event.preventDefault(); alert('The Turo listing link has not been added yet.'); }); }
+});
+
+
+// 4Ways Auto photo gallery
+const galleryMain = document.querySelector('[data-gallery-main] img');
+const galleryThumbs = document.querySelectorAll('[data-gallery-src]');
+
+galleryThumbs.forEach((button, index) => {
+  if (index === 0) button.classList.add('active');
+
+  button.addEventListener('click', () => {
+    if (!galleryMain) return;
+
+    galleryMain.src = button.dataset.gallerySrc;
+    galleryMain.alt = button.dataset.galleryAlt || '2024 Hyundai Sonata';
+
+    galleryThumbs.forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+  });
 });
