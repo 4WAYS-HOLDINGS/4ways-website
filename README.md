@@ -1,20 +1,13 @@
-# 4Ways Flagship Website — Version 11
+# 4Ways Property Group Website
 
-Pages included:
-- index.html — flagship split-screen landing page
-- property.html — Property Group
-- projects.html — Projects
-- auto.html — 4Ways Auto with Sonata gallery and Turo link
-- sell.html — Seller property form
-- about.html — 4Ways story and legacy
-- contact.html — Contact options
+A free static website dedicated exclusively to **4Ways Property Group, LLC**.
 
-Homepage features:
-- Clean split layout
-- House-only visual with no layered text
-- Subtle slow zoom/pan effect
-- Property Group and Projects buttons
-- Top navigation for all pages
-- Four-service strip beneath the hero
+## Pages
+- `index.html` — Home
+- `property.html` — Property Group / investment approach
+- `projects.html` — Projects
+- `sell.html` — Off-market seller lead page
+- `about.html` — About / legacy
+- `contact.html` — Real estate contact page
 
-Upload every file in this ZIP to the root of the GitHub repository and commit the changes.
+4Ways Auto has intentionally been removed so the two businesses can maintain separate websites and branding.

@@ -510,3 +510,5 @@ nav a.active{color:var(--teal)}
 @media (prefers-reduced-motion: reduce){
   .split-visual img{animation:none}
 }
+
+.property-only-contact{grid-template-columns:minmax(0,760px);justify-content:center;}
